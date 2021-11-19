@@ -1,0 +1,286 @@
+{% extends "layout.html" %}
+{% block body %}
+<STYLE>
+    #logo {
+        display: flex;
+        margin-bottom: 0%;
+    }
+
+    #logo img {
+
+        height: 80px;
+        width: 80px;
+        border-radius: 1cm;
+    }
+
+    #Company {
+        font-size: 1cm;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 0%;
+        font-weight: bold;
+        border-radius: 0%;
+        border-top-left-radius: 21px;
+        border-bottom-right-radius: 21px;
+        background-color: black;
+        color: white;
+        padding-left: 1%;
+        padding-right: 1%;
+        margin-left: 85%;
+    }
+
+    #heading {
+        margin-top: 0%;
+        margin-left: 2%;
+        padding-left: 1%;
+        padding-right: 1%;
+        border-top-left-radius: 28px;
+        border-bottom-right-radius: 28px;
+        display: flex;
+        font-size: 1.5cm;
+        font-weight: bold;
+        background-color: black;
+        color: rgb(235, 230, 230);
+    }
+
+    #model {}
+
+    #start {
+        display: flex;
+    }
+
+    #bike img {
+        margin-left: -7%;
+        margin-top: 7%;
+        margin-bottom: 2%;
+        display: flex;
+        height: 325px;
+        width: 500px;
+        border-width: 2cm;
+        border-color: yellow;
+        box-shadow: black;
+    }
+
+    #heading2 {
+        padding-left: 120%;
+        margin-top: 0%;
+        margin-left: 10%;
+        display: flex;
+        font-size: 1.5cm;
+        font-weight: bold;
+        text-align: right;
+        color: white;
+
+    }
+
+    #aman {
+        padding-left: 4%;
+        display: flex;
+        
+
+    }
+    
+
+    #down {
+        display: flex;
+        margin-bottom: 2%;
+    }
+
+    #trip {
+        padding-left: 0%;
+        
+    }
+
+    #heading3 {
+        text-align: center;
+        font-weight: bold;
+        margin: 2px;
+        margin-top: 0%;
+        padding: 2%;
+        font-size: 30px;
+        color: white;
+        background-color: black;
+        border: 2px solid black;
+    }
+
+    #heading4 {
+        text-align: center;
+        margin: 2px;
+        margin-top: 0%;
+        padding: 2%;
+        font-size: 20px;
+        background-color: rgb(255, 0, 0);
+        color: white;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    #heading5 {
+        margin-top: 0%;
+        text-align: center;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-top-left-radius: 20px;
+    }
+
+    #down .box1 {
+        margin: 1%;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        border: 2px solid black;
+        box-shadow: 0px 0px 15px black;
+        background-color: grey;
+
+    }
+
+    #price .inr {
+        font-size: 26px;
+        text-align: center;
+        margin-top: 0%;
+        margin-left: 40%;
+        margin-right: 40%;
+        background-color: black;
+        color: white;
+        box-shadow: 0px 0px 15px black;
+
+    }
+
+    #showroom {
+        text-align: center;
+        font-weight: bold;
+        font-size: 26px;
+        margin-bottom: 0%;
+        margin-top: 0%;
+        padding: 0%;
+        margin-left: 40%;
+        margin-right: 40%;
+        border: 2px solid black;
+        background-color: orangered;
+        box-shadow: 0px 0px 15px black
+    }
+    #back{
+        margin-top: 0% ;
+        background-image: url("{{url_for('static', filename='img/background.jpg') }}");
+
+    }
+    
+</STYLE>
+
+{% for post in posts %}
+{% set fname = 'img/database/' + post.img %}
+<section id="back">
+    
+<section>
+    <div id="logo">
+      <!--  <img src="logo.jpg" alt="logopic"> --> 
+        <h1 class="" id="Company">{{post.cname}}</h1>
+    </div>
+    <div id="price">
+        <div>
+            <h3 class="" id="showroom">Ex-Showroom</h3>
+            <h3 class="inr">{{post.price}}</h3>
+        </div>
+
+    </div>
+    <div id="start">
+        <h1 class="" id="heading">{{post.model}}</h1>
+        <div>
+            <h2 class="" id="heading2">Specification</h2>
+        </div>
+
+    </div>
+    <div id="aman">
+
+        <div id="bike">
+            <img src="{{url_for('static', filename=fname) }}" alt="">
+
+        </div>
+        
+        <div id="trip">
+            <div class="box">
+                <h4 class="" id="heading4">{{post.engine}}</h4>
+                <h3 class="" id="heading3">Engine</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.mileage}}</h4>
+                <h3 class="" id="heading3">Mileage</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.length}}</h4>
+                <h3 class="" id="heading3">length</h3>
+            </div>
+        </div>
+        <div id="trip">
+            <div class="box">
+                <h4 class="" id="heading4">{{post.power}}</h4>
+                <h3 class="" id="heading3">Power</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.tank}}</h4>
+                <h3 class="" id="heading3">F.Tank</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.weight}}</h4>
+                <h3 class="" id="heading3">W.weight</h3>
+            </div>
+        </div>
+        <div id="trip">
+            <div class="box">
+                <h4 class="" id="heading4">{{post.torque}}</h4>
+                <h3 class="" id="heading3">Torque</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.gearbox}}</h4>
+                <h3 class="" id="heading3">Gearbox</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.wheelbase}}</h4>
+                <h3 class="" id="heading3">Wheelbase</h3>
+            </div>
+        </div>
+        <div id="trip">
+            <div class="box">
+                <h4 class="" id="heading4">{{post.clearence}}</h4>
+                <h3 class="" id="heading3">G.Clearence</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.height}}</h4>
+                <h3 class="" id="heading3">Height</h3>
+            </div>
+            <div class="box">
+                <h4 class="" id="heading4">{{post.width}}</h4>
+                <h3 class="" id="heading3">width</h3>
+            </div>
+        </div>
+    
+    </div>
+</section>
+<!--<section>
+    <div id="down">
+        <div class="box1">
+            <h3 class="" id="heading5">Engine</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Off
+                icia, laudantium maiores libero mollitia hic ex iusto! </p>
+        </div>
+        <div class="box1">
+            <h3 class="" id="heading5">Engine</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Off
+                icia, laudantium maiores libero mollitia hic ex iusto! </p>
+        </div>
+        <div class="box1">
+            <h3 class="" id="heading5">Engine</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Off
+                icia, laudantium maiores libero mollitia hic ex iusto! </p>
+        </div>
+    </div>
+
+</section>-->
+</section>
+{% endfor %}
+{% endblock %}

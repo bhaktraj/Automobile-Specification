@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1 class="heading">Top car</h1>
+<div class="form1">
+    <form action="" method="post">
+        <div class="form2row">
+            <input type="text" name="model" id="" placeholder="company model">
+          </div>
+        <div class="form2row">
+            <input type="text" name="details" id="" placeholder="details">
+          </div>
+        <div class="form2row">
+          <input type="text" name="through" id="" placeholder="through">
+          </div>
+        <div class="form2row">
+            <input type="submit" value="Submit">
+          </div>
+    </form>
+</div>
+<section class="table1">
+    <table>
+        <tr>
+          <th>Company</th>
+          <th>Model</th>
+          <th>Price</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+          <td>{{post.cname}}</td>
+          <td>{{post.model}}</td>
+          <td>{{post.price}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+</section>
+{% endblock %}

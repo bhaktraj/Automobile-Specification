@@ -1,0 +1,17 @@
+.form2row{
+  margin: 2%;
+}
+.form2row input{
+  font-size: 1vw;
+  padding: 1%;
+}
+#company{
+  background: rgba(3, 3, 3, 0.6);
+    color: white;
+    font-size: 1vw;
+    width: 80%;
+    border: none;
+    text-align: center;
+    padding: 1%;
+
+}

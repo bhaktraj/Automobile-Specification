@@ -1,0 +1,221 @@
+{% extends "layout.html" %}
+{% block body %}
+<section id="home">
+    <div class="info">
+
+        <img class="nature" src="{{url_for('static', filename='img/car1.jpg') }}">
+        <img class="nature" src="{{url_for('static', filename='img/bike1.jpg') }}">
+        <img class="nature" src="{{url_for('static', filename='img/car2.jpg') }}">
+        <img class="nature" src="{{url_for('static', filename='img/bike2.jpg') }}">
+        <img class="nature" src="{{url_for('static', filename='img/car3.jpg') }}">
+        <img class="nature" src="{{url_for('static', filename='img/bike3.jpg') }}">
+    </div>
+</section>
+<section class="home1">
+    <div class="webinfo">
+        <h1 class="heading">Welcome to Dargo</h1>
+        <p class="para1">we are here to provide you every details of motor vehicle</p>
+        <div class="btn1a"><BUtton class="btn1"><a href="#top2">Lets Start</a></BUtton></div>
+    </div>
+</section>
+<section id="carani">
+    <div class="arrow1">
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+        <span class="bar1"></span>
+
+    </div>
+
+</section>
+<section class="arrow2">
+    <div class="anicar1">
+        <img class="anicar" src="{{url_for('static', filename='img/anicar.png') }}">
+    </div>
+</section>
+<section id="preview">
+    <img src="{{url_for('static', filename='img/bike4.jpg') }} " class="show1">
+    <img src="{{url_for('static', filename='img/car4.jpg') }} " class="show1">
+    <img src="{{url_for('static', filename='img/bike6.jpg') }} " class="show1">
+    <img src="{{url_for('static', filename='img/car6.jpg') }} " class="show1">
+</section>
+<section id="latest">
+    <div class="latest">
+        <h1>Latest Automobile is here</h1>
+    </div>
+    <section id="carani">
+        <div class="arrow1">
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+            <span class="bar1"></span>
+
+        </div>
+
+    </section>
+    <section class="arrow2">
+        <div class="anicar1">
+            <img class="anicar" src="{{url_for('static', filename='img/anicar.png') }}">
+        </div>
+    </section>
+    <div class="mainbox">
+        {% for post in posts %}
+        {% set fname = 'img/database/' + post.through %}
+        <div class="box">
+            <div class="imbox"><img src="{{url_for('static', filename=fname) }}" alt=""></div>
+            <h3 class="heading3">{{post.cnamemodel}}</h3>
+            <p class="para2">{{post.details}}</p>
+        </div>
+        {% endfor %}
+
+    </div>
+
+</section>
+<section class="arrow3">
+    <div>
+        <span class="bar2"></span>
+    </div>
+    <div class="anicar1">
+        <img class="anicar2" src="{{url_for('static', filename='img/anicar1.png') }}">
+    </div>
+</section>
+<section id="car">
+    <h2 class="heading2">Top 5 car in India</h2>
+    <button id="slideLeft" type="button">
+        < </button>+
+            <button id="slideRight" type="button">></button>
+            
+            <div id="wrapper">
+                {% for nav in item %}
+                {% set fname = 'img/database/' + nav.through %}
+                <div class="item">
+                    <div class="imbox"><img src="{{url_for('static', filename=fname) }} " alt=""></div>
+                    <h3 class="heading3">{{nav.cnamemodel}}</h3>
+                    <p class="para2">{{nav.details}}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+           
+</section>
+<section class="arrow3">
+    <div>
+        <span class="bar2"></span>
+    </div>
+    <div class="anicar1">
+        <img class="anicar2" src="{{url_for('static', filename='img/anicar1.png') }}">
+    </div>
+</section>
+<section id="car">
+    <h2 class="heading2">Top 5 Bike</h2>
+    <button id="slideLeft" type="button">
+        < </button>
+            <button id="slideRight" type="button">></button>
+            
+            <div id="wrapper">
+                {% for bike in item1 %}
+                {% set fname = 'img/database/' + bike.through %}
+                <div class="item">
+                    <div class="imbox"><img src="{{url_for('static', filename=fname) }} " alt=""></div>
+                    <h3 class="heading3">{{bike.cnamemodel}}</h3>
+                    <p class="para2">{{bike.details}}
+                    </p>
+                </div>
+                {% endfor %}
+            </div>
+            
+</section>
+<section class="arrow2">
+    <div class="anicar1">
+        <img class="anicar" src="{{url_for('static', filename='img/anicar.png') }}">
+    </div>
+</section>
+
+<section class="top2" id="top2">
+    <div class="bgsearch">
+        <img src="{{url_for('static', filename='img/searchbg.jpg') }}" alt="">
+    </div>
+    <div class="find">
+        <h1>Find the Details</h1>
+    </div>
+
+    <div class="form1">
+
+        <form action="{{ url_for('show') }}" method="post">
+            <h3 class="heading3">Vehicle Name</h3>
+            <input class="input-open" type="search" name="model" placeholder="Search" id="searchField1" autocomplete="On"
+                value="Apache 160cc">
+            <div class="btn2a"><input type="submit" value="Go"></div>
+        </form>
+    </div>
+
+
+</section>
+<section class="arrow3">
+    <div>
+        <span class="bar2"></span>
+    </div>
+    <div class="anicar1">
+        <img class="anicar2" src="{{url_for('static', filename='img/anicar1.png') }}">
+    </div>
+</section>
+
+{% endblock %}

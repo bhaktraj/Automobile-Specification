@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block body %}
+<section>
+    <h1>
+        welcome to dashboard
+    </h1>
+</section>
+<section class="form1">
+  <form action="/admin/data" method="POST" enctype="multipart/form-data">
+    <Div class="form2row">
+    <select id="company" name="cname" placeholder="Company Name">
+      <option value="Hero">Hero</option>
+      <option value="Honda">Honda</option>
+      <option value="Tata">TATA</option>
+      <option value="Mahindara">Mahindara</option>
+    </select>
+  </Div>
+  <div class="form2row">
+    <input type="text" name="model" id="" placeholder="Model">
+  </div>
+ <div class="form2row">
+    <input type="file" name="img" id="" placeholder="image">
+  </div>
+  <div class="form2row">
+    <input type="text" name="price" id="" placeholder="Price">
+  </div>
+  <div class="form2row">
+    <input type="text" name="engine" id="" placeholder="engine">
+  </div>
+  <div class="form2row">
+    <input type="text" name="power" id="" placeholder="Power">
+  </div>
+  <div class="form2row">
+    <input type="text" name="torque" id="" placeholder="Torque">
+  </div>
+  <div class="form2row">
+    <input type="text" name="clearence" id="" placeholder="G.Clearence">
+  </div>
+  <div class="form2row">
+    <input type="text" name="mileage" id="" placeholder="Mileage">
+  </div>
+  <div class="form2row">
+    <input type="text" name="tank" id="" placeholder="Fuel tank">
+  </div>
+  <div class="form2row">
+    <input type="text" name="gearbox" id="" placeholder="Gearbox">
+  </div>
+  <div class="form2row">
+    <input type="text" name="height" id="" placeholder="Height">
+  </div>
+  <div class="form2row">
+    <input type="text" name="length" id="" placeholder="Length">
+  </div>
+  <div class="form2row">
+    <input type="text" name="width" id="" placeholder="Width">
+  </div>
+  <div class="form2row">
+    <input type="text" name="weight" id="" placeholder="Wet weight">
+  </div>
+  <div class="form2row">
+    <input type="text" name="wheelbase" id="" placeholder="Wheelbase">
+  </div>
+  <div class="form2row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</section>
+<section>
+  <a href="/logout"><button class="btn2">Logout</button></a>
+</section>
+{% endblock %}

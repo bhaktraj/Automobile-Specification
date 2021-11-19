@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+<section>
+    <h1>
+        welcome to dashboard
+    </h1>
+    
+</section>
+<section>
+  <h1>
+    Add post
+  </h1>
+  <a href="/admin/data"><button class="btn2">Add data</button></a>
+  <a href="/admin/latest"><button class="btn2">Add Automobile</button></a>
+  <a href="/admin/latestcar"><button class="btn2">Add latest car</button></a>
+  <a href="/admin/latestbike"><button class="btn2">Add latest bike</button></a>
+  
+</section>
+<section class="table1">
+    <table>
+        <tr>
+          <th>S.no</th>
+          <th>Company</th>
+          <th>Model</th>
+          <th>Img</th>
+          <th>Price</th>
+          <th>Engine</th>
+          <th>Power</th>
+          <th>Torque</th>
+          <th>G.Clearence</th>
+          <th>Mileage</th>
+          <th>F.tank</th>
+          <th>Gearbox</th>
+          <th>Height</th>
+          <th>length</th>
+          <th>width</th>
+          <th>Wet weight</th>
+          <th>Wheelbase</th>
+          <th>date</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+          <td>{{post.sno}}</td>
+          <td>{{post.cname}}</td>
+          <td>{{post.model}}</td>
+          <td>{{post.img}}</td>
+          <td>{{post.price}}</td>
+          <td>{{post.engine}}</td>
+          <td>{{post.power}}</td>
+          <td>{{post.torque}}</td>
+          <td>{{post.clearence}}</td>
+          <td>{{post.mileage}}</td>
+          <td>{{post.tank}}</td>
+          <td>{{post.gearbox}}</td>
+          <td>{{post.height}}</td>
+          <td>{{post.length}}</td>
+          <td>{{post.width}}</td>
+          <td>{{post.weight}}</td>
+          <td>{{post.wheelbase}}</td>
+          <td>{{post.date}}</td>
+        </tr>
+        {% endfor %}
+       
+      </table>
+</section>
+
+<section>
+  <a href="/logout"><button class="btn2">Logout</button></a>
+</section>
+{% endblock %}
